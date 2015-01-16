@@ -1,0 +1,96 @@
+.right-wrapper{
+	margin-left: 80px;
+	width: 90%;
+	height: auto;
+	display: inline-block;
+}
+.content{
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 100%;
+	height: auto;
+}
+.col-1, .col-2{
+	display: inline-block;
+	vertical-align: top;
+}
+.col-1{
+	width: 25%;
+}
+.col-2{
+	width: 70%;
+}
+.profPhotoContainer{
+	display: inline-block;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 5px;
+	width: 150px;
+	height: auto;
+	float: right;
+	margin-right: 20px;
+	border-radius: 2px;
+}
+.profPhoto{
+	display: inline-block;
+	width: 100%;
+	border-radius: 2px;
+}
+.profPhotoContainer:hover{
+	cursor: pointer;
+}
+.content-home{
+	margin-top: 0 auto;
+	padding: 10px;
+	width: 95%;
+	background-color: #f0f0f0;
+	border-radius: 2px;
+	color: #424345;
+	min-height: 500px;
+
+}
+.user-names{
+	color: #424345;
+	border-bottom: 1px solid #424345;
+	margin-bottom: 10px;
+}
+.user-names a{
+	color: #424345;
+	text-decoration: none;
+}
+.user-names a:hover{
+	color: #0CA2FF;
+	cursor: pointer;
+}
+.dog-container{
+	display: inline-block;
+	max-width: 200px;
+	margin-right: 10px;
+	padding: 10px;
+	background-color: #fcfcfc;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+.description-pic-container{
+	text-align: center;
+}
+.pic-container{
+	padding: 5px;
+	margin: 3px;
+	border: 1px solid #e0e0e0;
+	border-radius: 2px;
+	background: #fff;
+}
+.pic-container img{
+	width: 100%;
+}
+.name-container{
+	text-align: center;
+}
+.dog-name{
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.1em;
+	font-weight: 600;
+}
