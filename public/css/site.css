@@ -44,125 +44,16 @@ abbr,acronym {
 }
 
 body{
-	font-family: "Times New Roman", Times, serif;
-	background-color: #f0f0f0;
+	font-family: "Arial", Times, serif;
+	background: #e6ffc6; /* Old browsers */
+background: -moz-linear-gradient(top,  #e6ffc6 0%, #8ecc95 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6ffc6), color-stop(100%,#8ecc95)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e6ffc6 0%,#8ecc95 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e6ffc6 0%,#8ecc95 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e6ffc6 0%,#8ecc95 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e6ffc6 0%,#8ecc95 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ffc6', endColorstr='#8ecc95',GradientType=0 ); /* IE6-9 */
+min-height: 100%;
+min-width: 100%;
 	color: #484848;
-}
-#nav{
-	display: block;
-	height: 60px;
-	width: 100%;
-	background: #96f8e3;
-	-webkit-box-shadow: 0px 3px 5px 0px rgba(229,229,229,1);
--moz-box-shadow: 0px 3px 5px 0px rgba(229,229,229,1);
-box-shadow: 0px 3px 5px 0px rgba(229,229,229,1);
-}
-#home-wrapper{
-	display: block;
-	margin: 0 auto;
-}
-#left-window, #right-window, #mid-window{
-	display: inline-block;
-	margin-top: 40px;
-	width: 300px;
-	border: 1px solid #e5e5e5;
-	border-radius: 20px;
-	-webkit-box-shadow: 0px 0px 5px 3px rgba(229,229,229,1);
--moz-box-shadow: 0px 0px 5px 3px rgba(229,229,229,1);
-box-shadow: 0px 0px 5px 3px rgba(229,229,229,1);
-}
-#left-window{
-	background: #96f8e3;
-	margin-left: 10%;
-	height: auto;
-	padding: 15px;
-}
-#mid-window{
-	width: 400px;
-	padding: 15px;
-}
-.title-left{
-	font-size: 1.2em;
-	font-weight:700;
-	border-bottom: 1px solid #484848;
-}
-.text-left{
-	margin-top: 10px;
-}
-#mid-window{
-	height: 300px;
-	margin-left: 10%;
-	vertical-align: top;
-	background: #fff;
-}
-#site-name, #logo, #moto{
-	display: inline-block;
-	width: 150px;
-	margin-left: 10%;
-	height: 60px;
-	line-height: 60px;
-}
-#moto{
-	width: 400px;
-	font-weight: 800;
-	font-size: 1.5em;
-	text-align: center;
-}
-#site-name a{
-	display: block;
-	font-size: 1.5em;
-	text-align: center;
-	width: 100%;
-	color: #484848;
-	text-decoration: none;
-}
-.title-login{
-	display: block;
-	text-align: center;
-	font-size: 1.3em;
-	font-weight: 700;
-	border-bottom: 1px solid #484848;
-}
-.form-login label, .form-login > div > input, .login-btn{
-	display: block;
-	margin:0 10%;
-}
-.form-login label{
-	margin-top: 25px;
-	text-align: center;
-	font-size: 1.2em;
-}
-.input-name, .input-pass{
-	width: 80%;
-	border: 1px solid #e5e5e5;
-}
-.input-name:focus, .input-pass:focus{
-	border-color: #35cc83;
-}
-.input-name, .input-pass{
-	height: 30px;
-	line-height: 30px;
-	color: #35cc83;
-	border: 1px solid #96f8e3;
-	outline: none;
-	font-size: 1.2em;
-	border-radius: 10px;
-	padding-left:15px;
-	padding-right: 15px;
-}
-.login-btn{
-	margin-left: 100px;
-	margin-top: 25px;
-	width: 200px;
-	height: 35px;
-	font-size: 1.2em;
-	letter-spacing: 3px;
-	background: #96f8e3;
-	outline: none;
-	border: none;
-	border-radius: 10px;
-}
-.login-btn:hover{
-	cursor: pointer;
-	background: #35cc83;
 }

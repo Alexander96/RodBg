@@ -1,34 +1,4 @@
 ﻿extends includes/layout
 block main-content
-    header
-        div(id="nav")
-            div(id="logo") logo
-            div(id="site-name") 
-                a(href="/") RODBG.COM
-            div(id="moto") Хранилище на българските домове
-            div(id="language")
-        div(id="home-wrapper")
-            div(id="left-window")
-                h2.title-left
-                    | Каква е нашата цел?
-                div.text-left
-                    | Водени от убеждението, че хората са вродено любопитни за своя произход ние създадохме този сайт. Тук всеки би могъл да се впусне в приключението “Родова Памет”
-                    | Може да открие своите роднини, да види връзките между своя и други родове. 
-                    | В сайта ще получите възможността да видите добро графично оформление на  Вашето родословно дърво.  Да изпращате и получавате информация за Вашите близки. 
-                    | Да добавяте, получавате и изпращате семейни снимки.
-                    | Тук ще имате възможността да инициирате родови събития, както и да получавате информация за тях, за да не пропуснете нищо, което е важно за Вас. 
-                    | Чрез Родбг ще можете да научите повече за своите родственици, да се запознаете с интересни статистики, характерни за рода Ви. 
-                    | Ще можете да пътувате и научавате повече за събитията от времевата линия на Вашите деди.
-
-            div(id="mid-window")
-                h2.title-login ВХОД
-                form.form-login
-                    label Потребителско име
-                    div
-                        input.input-name(type="text" placeholder="Потребителско име" ng-model="user.username")
-                    label Парола
-                    div
-                        input.input-pass(type="password" placeholder="Парола" ng-model="user.password")
-                    button.login-btn(ng-click="login(user)") Вход
-            div(id="right-window")
+    div(ng-include="'partials/main/home-nav'")
     div.content(ng-view)

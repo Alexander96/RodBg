@@ -1,0 +1,64 @@
+﻿header(ng-controller="FrontPageController")
+    div(ng-show="!identity.currentUser")
+        nav(id="nav")
+            div(id="site-name") 
+                a(href="/") RODBG.COM
+            div(id="moto") Хранилище на българските родове
+            div(id="login-section")
+                form.form-signup
+                    div.username
+                        label E-mail:
+                        input.input-name(type="text" placeholder="E-mail" ng-model="user.username")
+                        div.auto-login
+                            input(type="checkbox")
+                            label Запомни ме
+                    div.pass
+                        label Парола:
+                        input.input-pass(type="password" placeholder="Парола" ng-model="user.password")
+                        div.forgot-pass
+                            a(href="#") Забравена парола?
+                    div.login
+                        button.login-btn(ng-click="login(user)") Вход
+        div(id="home-wrapper")
+            div(id="left-window")
+                div
+                    img(src="img/tree.png")
+                div.text-we
+                    h2.title-left
+                        | ROD BG
+                    div.text-left
+                        | Водени от убеждението, че хората са вродено любопитни за своя произход ние създадохме този сайт. Тук всеки би могъл да се впусне в приключението “Родова Памет”
+                        | Може да открие своите роднини, да види връзките между своя и други родове. 
+                        | В сайта ще получите възможността да видите добро графично оформление на  Вашето родословно дърво.  Да изпращате и получавате информация за Вашите близки. 
+                        | Да добавяте, получавате и изпращате семейни снимки.
+                        | Тук ще имате възможността да инициирате родови събития, както и да получавате информация за тях, за да не пропуснете нищо, което е важно за Вас. 
+                        | Чрез Родбг ще можете да научите повече за своите родственици, да се запознаете с интересни статистики, характерни за рода Ви. 
+                        | Ще можете да пътувате и научавате повече за събитията от времевата линия на Вашите деди.
+
+            div(id="mid-window")
+                h1.title-reg Регистрация
+                form.form-reg(name="form-reg")
+                    div
+                        input.form-input(type="text" placeholder="Име" ng-model="user.firstName")
+                        input.form-input(type="text" placeholder="Презиме" ng-model="user.midName")
+                        input.form-input.lastName(type="text" placeholder="Фамилия" ng-model="user.lastName")
+                    div.sex-section
+                        div.male
+                            input.male-input(type="radio" name="sex" ng-model="user.Sex")
+                            lable Мъж
+                        div.female
+                            input.female-input(type="radio" name="sex" ng-model="user.Sex")
+                            lable Жена
+                    div
+                        input.form-input(type="text" placeholder="Родно Място" ng-model="user.birthPlace")
+                        input.form-input(type="text" placeholder="Област" ng-model="user.region")
+                    div
+                        input.form-input.birthDate(type="text" placeholder="дд/мм/гггг" ng-model="user.birthDate")
+                    div
+                        input.form-input.email(type="email" placeholder="Email" ng-model="user.username")
+                    div
+                        input.form-input(type="password" placeholder="Парола" ng-model="user.password")
+                        input.form-input(type="password" placeholder="Повторете паролата" ng-model="user.password1")
+                    div
+                        button.btn-reg Регистрация
+            div(id="right-window")

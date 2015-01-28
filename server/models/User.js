@@ -2,32 +2,24 @@
 var encryption = require('../utilities/encryption.js'); 
 var fs = require('fs');
 
+var familySchema = mongoose.Schema({
+    name: String
+});
+var Family = mongoose.model("Family", familySchema);
 var userSchema = mongoose.Schema({
         username: {type: String, require: '{PATH} is required', unique: true},
         firstName: {type: String, require: '{PATH} is required'},
+        midName: String,
         lastName: {type: String, require: '{PATH} is required'},
         profPhoto: {data: Buffer, contentType: String},
         friends: [{
-
-            id:String,
-            username: String
+            id:String
         }],
-        dogs: [{
-            description:String,
-            name: String,
-            age: String, //we will hold the age in str because it can be 3 months for example
-            breed: String,
-            profPhoto: {data: Buffer, contentType: String} // contentType should be 'image/png' or 'image/jpg'
-        }],
-        album:[{
-            data: Buffer, 
-            contentType: String,
-            description: String
-        }],
+        Sex: String,
+        family: { type: mongoose.Schema.ObjectId, ref: "Family"},
         salt: String,
         hashPass: String,
-        roles: [String],
-        seenFrom: [String] //Ip adresses of users (one String per ip => not too many per user)
+        roles: [String]
 });
 userSchema.method({
     authenticate: function(password){
@@ -39,69 +31,55 @@ userSchema.method({
 })
 var User = mongoose.model('User', userSchema);
 module.exports.seedInitialUsers = function(){
-
+    var fm = {};
+    Family.find({}).exec(function(err, collection){
+        if(err){
+            console.log("couldnt find family err");
+            return;
+        }
+        if(collection.length==0){
+            Family.create({
+                name: "Goshkovi"
+            })
+            console.log("Family added...");
+        }
+        else{
+            fm = collection[0];
+        }
+    });
+    //User.remove({}).exec(function(e,d){console.log("removed-------------------");})
     User.find({}).exec(function (err, collection) {
-    if (err) {
-        console.log('Cant find users ' + err)
-        return;
-    }
-    if ( collection.length == 0 ) {
-        var salt,
-            hasedPwd;
-        salt = encryption.generateSalt();
-        //for testing purposes
-        var imgPath = "public/img1.jpg";
-        var pic = fs.readFileSync(imgPath);
-        var imgPath2 = "public/husky.jpg";
-        var pic2 = fs.readFileSync(imgPath2);
-
-        hasedPwd = encryption.generateHashedPassword( salt, 'pesho' );
-       
-        User.create( { username: 'pesho',
-         firstName: 'Pesho', 
-         lastName: 'Peshev',
-         profPhoto: {
-            data: pic,
-            contentType: "image/jpg"
-         },
-         dogs:[{
-            description: "My first dog :)",
-            name:"Muncho",
-            age: "14/12/2014",
-            breed: "husky",
-            profPhoto:{
-                data: pic2,
-                contentType: 'image/jpg',
+            if (err) {
+                console.log('Cant find users ' + err)
+                return;
             }
-         }],
-         friends: [],
-         album:[],
-         salt: salt,
-         hashPass: hasedPwd, 
-         roles: ['admin'] });
+            if ( collection.length == 0 ) {
+                var salt,
+                    hasedPwd;
+                salt = encryption.generateSalt();
+                //for testing purposes
+                var imgPath = "public/img/img1.jpg";
+                var pic = fs.readFileSync(imgPath);
 
-        User.create( { username: 'gosho',
-         firstName: 'Gosho', 
-         lastName: 'Goshov',
-         profPhoto: {
-            data: pic,
-            contentType: "image/jpg"
-         },
-         dogs: [],
-         friends: [],
-         album:[],
-         salt: salt,
-         hashPass: hasedPwd, 
-         roles: ['admin'] });
-        console.log( 'Users added to database....' );
-    }
-    else{
-        // for(var i=0;i < collection.length;i++){
-        //     for(var j=0;j<collection[i].dogs.length;j++){
-        //         // console.log(collection[i].dogs[j].profPhoto.contentType);    //removed weird UNDEFINEDs in console
-        //         // console.log(collection[i].dogs[j].profPhoto.data);           //was too confusing
-        //     }
-        // }
-    }
+                hasedPwd = encryption.generateHashedPassword( salt, 'pesho' );
+
+                User.create({ 
+                    username: 'pesho',
+                    firstName: 'Pesho',
+                    midName: "Goshkov",
+                    lastName: 'Peshev',
+                    profPhoto: {data: pic, contentType: "image/jpg"},
+                    friends: [],
+                    family: fm,
+                    Sex: 'male',
+                    salt: salt,
+                    hashPass: hasedPwd,
+                    roles: ['admin'] });
+                    console.log( 'Users added to database....' );
+            }
+            else{
+                console.log("id: ----- " + fm._id);
+                console.log(collection[0]);
+            }
     });
 }

@@ -1,9 +1,8 @@
 ﻿var mongoose = require('mongoose'),
-    user = require('../models/User.js'),
-    discussion = require('../models/Discussion.js');
+    user = require('../models/User.js');
 
 module.exports = function(config){
-    /*mongoose.connect(config.db);
+    mongoose.connect(config.db);
 
     var db = mongoose.connection;
     db.once( 'open', function ( err ) {
@@ -12,7 +11,7 @@ module.exports = function(config){
     });
     db.on( 'error', function ( err ) {
         console.log( 'Database error ' + err );
-    });*/
+    });
 
-    //user.seedInitialUsers();
+    user.seedInitialUsers();
 }
