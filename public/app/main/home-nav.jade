@@ -1,2 +1,20 @@
 div(ng-controller="HomeNavController")
-	div(ng-show="identity.currentUser") hooooooooome nav
+	div#home-nav-container(ng-show="identity.currentUser")
+		nav#home-nav
+			div#nav-wrapper
+				div#nav-wrapper-left-side
+					a(href="#/home") RODBG
+				div#nav-wrapper-right-side
+					ul.nav-ul
+						li
+							a(href="#") Начало
+						li
+							a(href="#") Търсене
+						li
+							a(href="#") Родословно дърво
+						li
+							a(href="#") Снимки
+						li
+							a(href="#") Събития
+						li
+							a(href="#") Профил

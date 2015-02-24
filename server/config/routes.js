@@ -7,6 +7,8 @@ module.exports = function (app) {
     app.get('/api/users/:id', controllers.users.getUser);
     app.post('/api/users', controllers.users.createUser);
     app.put('/api/users',auth.isAuthenticated, controllers.users.updateUser);
+    app.get('/opinions', controllers.opinions.getAllOpinions);
+    app.get('/profPhoto/:id', controllers.users.getProfPhoto);
     app.get('/partials/:partialArea/:partialName', function (req, res) {
         res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName, {
                beautify: true,

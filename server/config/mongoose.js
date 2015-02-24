@@ -1,5 +1,6 @@
 ﻿var mongoose = require('mongoose'),
     user = require('../models/User.js');
+    opinion = require('../models/Opinion.js');
 
 module.exports = function(config){
     mongoose.connect(config.db);
@@ -14,4 +15,5 @@ module.exports = function(config){
     });
 
     user.seedInitialUsers();
+    opinion.seedInitialOpinions();
 }

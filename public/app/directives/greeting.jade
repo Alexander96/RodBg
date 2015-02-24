@@ -1,0 +1,19 @@
+div(ng-show="!!identity.currentUser")
+	div.gr-dialog
+		div.gr-dialog-content
+			h2.gr-title Добре дошли
+				br
+				| във Вашето лично пространство!
+			p.gr-text
+				| Тук Вие можете да видите Вашето родословно дърво 
+				br
+				| Да търсите, намирате и добавяте още Ваши роднини
+				br
+				| Да научавате повече за тях!
+				br
+				| Да съхранявате снимки и водите летописна книга
+				br
+				| Тук ще съхраните Вашата Родова Памет!
+			button.gr-btn-close(ng-click="closeGreeting()") Затвори
+		div.gr-close X
+	div.gr-overlay

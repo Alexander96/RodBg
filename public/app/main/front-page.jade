@@ -8,17 +8,17 @@
                 form.form-signup
                     div.username
                         label E-mail:
-                        input.input-name(type="text" placeholder="E-mail" ng-model="user.username")
+                        input.input-name#lgn-email(type="text" placeholder="E-mail" ng-model="us.username")
                         div.auto-login
                             input(type="checkbox")
                             label Запомни ме
                     div.pass
                         label Парола:
-                        input.input-pass(type="password" placeholder="Парола" ng-model="user.password")
+                        input.input-pass#lgn-password(type="password" placeholder="Парола" ng-model="us.password")
                         div.forgot-pass
                             a(href="#") Забравена парола?
                     div.login
-                        button.login-btn(ng-click="login(user)") Вход
+                        button.login-btn(ng-click="login(us)") Вход
         div(id="home-wrapper")
             div(id="left-window")
                 div
@@ -47,18 +47,22 @@
                             input.male-input(type="radio" name="sex" ng-model="user.Sex")
                             lable Мъж
                         div.female
-                            input.female-input(type="radio" name="sex" ng-model="user.Sex")
+                            input.female-input(type="radio" name="sex" ng-model="user.Sex1")
                             lable Жена
                     div
                         input.form-input(type="text" placeholder="Родно Място" ng-model="user.birthPlace")
                         input.form-input(type="text" placeholder="Област" ng-model="user.region")
                     div
-                        input.form-input.birthDate(type="text" placeholder="дд/мм/гггг" ng-model="user.birthDate")
+                        select.date-selector(ng-model="user.day" ng-options="opt as opt.label for opt in optionsDay")
+                        select.date-selector(ng-model="user.month" ng-options="opt as opt.label for opt in optionsMonth")
+                        select.date-selector(ng-model="user.year" ng-options="opt as opt.label for opt in optionsYear")
                     div
                         input.form-input.email(type="email" placeholder="Email" ng-model="user.username")
                     div
                         input.form-input(type="password" placeholder="Парола" ng-model="user.password")
-                        input.form-input(type="password" placeholder="Повторете паролата" ng-model="user.password1")
+                        input.form-input(type="password" placeholder="Повторете паролата" ng-model="user.password2")
                     div
-                        button.btn-reg Регистрация
+                        button.btn-reg(ng-click="signup(user)") Регистрация
             div(id="right-window")
+                div.slides(data="opinions")
+                div.greeting

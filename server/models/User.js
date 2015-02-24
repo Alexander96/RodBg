@@ -75,11 +75,47 @@ module.exports.seedInitialUsers = function(){
                     salt: salt,
                     hashPass: hasedPwd,
                     roles: ['admin'] });
+                User.create({ 
+                    username: 'stanka',
+                    firstName: 'Станка',
+                    midName: "Goshkov",
+                    lastName: 'Стойчева',
+                    profPhoto: {data: pic, contentType: "image/jpg"},
+                    friends: [],
+                    family: fm,
+                    Sex: 'female',
+                    salt: salt,
+                    hashPass: hasedPwd,
+                    roles: ['admin'] });
+                User.create({ 
+                    username: 'valio',
+                    firstName: 'Валентин',
+                    midName: "Goshkov",
+                    lastName: 'Петров',
+                    profPhoto: {data: pic, contentType: "image/jpg"},
+                    friends: [],
+                    family: fm,
+                    Sex: 'male',
+                    salt: salt,
+                    hashPass: hasedPwd,
+                    roles: ['admin'] });
+                User.create({ 
+                    username: 'hristo',
+                    firstName: 'Христо',
+                    midName: "Goshkov",
+                    lastName: 'Недялков',
+                    profPhoto: {data: pic, contentType: "image/jpg"},
+                    friends: [],
+                    family: fm,
+                    Sex: 'male',
+                    salt: salt,
+                    hashPass: hasedPwd,
+                    roles: ['admin'] });
                     console.log( 'Users added to database....' );
             }
             else{
-                console.log("id: ----- " + fm._id);
-                console.log(collection[0]);
+                //console.log("id: ----- " + fm._id);
+                //console.log(collection);
             }
     });
 }
